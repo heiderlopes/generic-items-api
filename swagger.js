@@ -9,7 +9,7 @@ const options = {
       description:
         "API exemplo que armazena itens genéricos identificados por rm.",
     },
-    servers: [{ url: "https://items-api-3d8ec14523c8.herokuapp.com/" }],
+    servers: [{ url: "https://generic-items-api-a785ff596d21.herokuapp.com/" }],
   },
   apis: ["./routes/*.js"],
 };
