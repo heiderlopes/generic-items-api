@@ -4,137 +4,154 @@
     <meta charset="UTF-8" />
     <title>Avaliação por RM</title>
     <style>
-      body {
-        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-        background: linear-gradient(135deg, #74ebd5 0%, #9face6 100%);
-        margin: 0;
-        padding: 0;
-        height: 100vh;
-        display: flex;
-      }
+  body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: linear-gradient(135deg, #1e1e2f 0%, #2d2d44 100%);
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    color: #e0e0e0;
+  }
 
-      /* Layout principal: 2 colunas */
-      .layout {
-        display: flex;
-        width: 100%;
-        height: 100%;
-      }
+  /* Layout principal: 2 colunas */
+  .layout {
+    display: flex;
+    width: 100%;
+    height: 100%;
+  }
 
-      /* Coluna esquerda (Instruções) */
-      .instrucoes {
-        flex: 1;
-        background: #fff;
-        border-right: 3px solid #6a5acd;
-        padding: 20px;
-        overflow-y: auto;
-      }
+  /* Coluna esquerda (Instruções) */
+  .instrucoes {
+    flex: 1;
+    background: #2a2a3d;
+    border-right: 3px solid #6a5acd;
+    padding: 20px;
+    overflow-y: auto;
+  }
 
-      .instrucoes h2 {
-        margin-top: 0;
-        color: #6a5acd;
-      }
+  .instrucoes h2 {
+    margin-top: 0;
+    color: #a99ffb;
+  }
 
-      .instrucoes pre {
-        white-space: pre-wrap;
-        font-family: inherit;
-        background: #f8f9ff;
-        padding: 15px;
-        border-radius: 8px;
-        border-left: 5px solid #6a5acd;
-      }
+  .instrucoes h3 {
+    margin-top: 0;
+    color: #a99ffb;
+  }
 
-      /* Coluna direita (Aplicação) */
-      .app-container {
-        flex: 1;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        padding: 20px;
-      }
+  .instrucoes b {
+    color: #a99ffb;
+  }
 
-      .container {
-        background: #fff;
-        border-radius: 12px;
-        box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2);
-        padding: 30px;
-        width: 400px;
-        text-align: center;
-        animation: fadeIn 0.8s ease;
-      }
+  .instrucoes pre {
+    white-space: pre-wrap;
+    font-family: inherit;
+    background: #1e1e2f;
+    padding: 15px;
+    border-radius: 8px;
+    border-left: 5px solid #6a5acd;
+    color: #dcdcdc;
+  }
 
-      h1 {
-        color: #333;
-        margin-bottom: 20px;
-      }
+  /* Coluna direita (Aplicação) */
+  .app-container {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* não centraliza vertical, começa do topo */
+    padding: 20px;
+    overflow-y: auto; /* permite rolagem quando crescer */
+  }
 
-      input {
-        padding: 10px;
-        font-size: 16px;
-        border: 2px solid #ddd;
-        border-radius: 8px;
-        outline: none;
-        transition: border 0.3s;
-        width: calc(100% - 24px);
-        margin-bottom: 10px;
-      }
+  .container {
+    background: #2a2a3d;
+    border-radius: 12px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.6);
+    padding: 30px;
+    width: 100%;
+    max-width: 500px; /* limita largura para telas grandes */
+    text-align: center;
+    animation: fadeIn 0.8s ease;
+  }
 
-      input:focus {
-        border: 2px solid #6a5acd;
-      }
+  h1 {
+    color: #ffffff;
+    margin-bottom: 20px;
+  }
 
-      button {
-        padding: 10px 20px;
-        font-size: 16px;
-        border: none;
-        border-radius: 8px;
-        cursor: pointer;
-        background: #6a5acd;
-        color: #fff;
-        transition: background 0.3s;
-      }
+  input {
+    padding: 10px;
+    font-size: 16px;
+    border: 2px solid #444;
+    border-radius: 8px;
+    outline: none;
+    transition: border 0.3s;
+    width: calc(100% - 24px);
+    margin-bottom: 10px;
+    background: #1e1e2f;
+    color: #e0e0e0;
+  }
 
-      button:hover {
-        background: #4b3ca8;
-      }
+  input:focus {
+    border: 2px solid #6a5acd;
+  }
 
-      .resultado {
-        margin-top: 25px;
-        text-align: left;
-        background: #f8f9ff;
-        padding: 15px;
-        border-radius: 10px;
-        border-left: 5px solid #6a5acd;
-      }
+  button {
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    background: #6a5acd;
+    color: #fff;
+    transition: background 0.3s;
+  }
 
-      .resultado p {
-        margin: 8px 0;
-        color: #333;
-      }
+  button:hover {
+    background: #4b3ca8;
+  }
 
-      .resultado ul {
-        list-style: none;
-        padding: 0;
-        margin: 10px 0 0 0;
-      }
+  .resultado {
+    margin-top: 25px;
+    text-align: left;
+    background: #1e1e2f;
+    padding: 15px;
+    border-radius: 10px;
+    border-left: 5px solid #6a5acd;
+  }
 
-      .resultado ul li {
-        background: #e6e6fa;
-        padding: 8px;
-        margin-bottom: 6px;
-        border-radius: 6px;
-      }
+  .resultado p {
+    margin: 8px 0;
+    color: #e0e0e0;
+  }
 
-      @keyframes fadeIn {
-        from {
-          opacity: 0;
-          transform: translateY(-10px);
-        }
-        to {
-          opacity: 1;
-          transform: translateY(0);
-        }
-      }
-    </style>
+  .resultado ul {
+    list-style: none;
+    padding: 0;
+    margin: 10px 0 0 0;
+  }
+
+  .resultado ul li {
+    background: #3b3b55;
+    padding: 8px;
+    margin-bottom: 6px;
+    border-radius: 6px;
+    color: #e6e6fa;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+</style>
+
   </head>
   <body>
     <div class="layout">
@@ -142,47 +159,54 @@
       <div class="instrucoes">
         <h2>CHECKPOINT FLUTTER</h2>
         <pre>
-Instruções Gerais
-O projeto deve estar funcionando na hora da correção.
-Os métodos e widgets solicitados serão avaliados como certo ou errado (não haverá pontuação parcial dentro de cada item).
-Não será permitida a consulta a ferramentas de Inteligência Artificial (IA) durante a prova. Caso haja algum indício do uso a nota será ZERO.
-Caso o projeto não compile ou apresente erros que impeçam a execução, a avaliação será considerada ZERO.
+          <h3>Instruções Gerais</h3>
 
-Crie o projeto rodando o seguinte comando (substituindo XXXX pelo seu RM). Caso não seja gerado o package corretamente, a nota da avaliação será ZERO:
-flutter create --org br.com.seurm checkpoint05_webservices_rmXXXX
+        O projeto deve estar funcionando na hora da correção.
 
-Obrigatório o envio do arquivo zipado contendo:
-- main.dart
-- pubspec.yaml
+        Os métodos e widgets solicitados <b>serão avaliados como certo ou errado</b> (não haverá pontuação parcial dentro de cada item).
 
-Requisitos:
-(3,0 pontos) LISTA DE REGISTROS
-- Exibir os registros cadastrados na API pelo RM em uma lista.
-- Cada item da lista deve mostrar os campos obrigatórios cadastrados no formulário.
+        Não será permitida a consulta a ferramentas de Inteligência Artificial (IA) durante a prova. Caso haja algum indício do uso a nota será ZERO.
 
-(1,0 pontos) BOTÃO PARA REGISTRO
-- Adicionar um Button ou FloatActionButton para adicionar um novo livro.
+        Durante o checkpoint <b>NÃO É PERMITIDO O USO DE SMARTPHONE, TABLETS, entre outros eletrônicos</b>. Caso haja algum indício do uso a nota será ZERO.
 
-(3,0 pontos) EXCLUSÃO DE REGISTRO
-- Adicione um botão no item da lista para realizar a exclusão do item. Após a exclusão recarregar a lista.
+        Caso o projeto não compile ou apresente erros que impeçam a execução, a avaliação será considerada ZERO.
 
-(3,0 pontos) FORMULÁRIO DE REGISTRO
-- Você deve criar um formulário obrigatoriamente com pelo menos 4 campos: Imagem (URL), título, descrição e valor.
-- Exibir preview da imagem abaixo do campo de URL, renderizando a imagem da internet.
-- Botão para Salvar.
+        Crie o projeto rodando o seguinte comando (substituindo XXXX pelo seu RM). Caso não seja gerado o package corretamente, a nota da avaliação será ZERO:
 
-API Backend:
-https://generic-items-api-a785ff596d21.herokuapp.com
+        <b>flutter create --org br.com.seurm checkpoint05_webservices_rmXXXX</b>
 
-GET /api/{SEU_TEMA}/{rm}
-POST /api/{SEU_TEMA}
-DELETE /api/{SEU_TEMA}/{rm}
-      </pre
-        >
+        <br>Obrigatório o envio do arquivo zipado contendo:</b>
+
+            - main.dart
+
+            - pubspec.yaml
+
+      <h3>Requisitos:</h3>
+<h3>(3,0 pontos) LISTA DE REGISTROS</h3>    
+        - Exibir os registros cadastrados na API pelo RM em uma lista.
+        
+        - Cada item da lista deve mostrar os campos obrigatórios cadastrados no formulário.
+
+
+<h3>(1,0 pontos) BOTÃO PARA REGISTRO</h3>
+        - Adicionar um Button ou FloatActionButton para adicionar um novo livro.
+
+
+<h3>(3,0 pontos) EXCLUSÃO DE REGISTRO</h3>
+      - Adicione um botão no item da lista para realizar a exclusão do item. Após a exclusão recarregar a lista.
+
+
+<h3>(3,0 pontos) FORMULÁRIO DE REGISTRO</h3>
+      - Você deve criar um formulário obrigatoriamente com os campos conforme soliciado ao lado para o seu RM.
+      
+      - Exibir preview da imagem abaixo do campo de URL, renderizando a imagem da internet.
+      
+      - Botão para Salvar.
+
+      </pre>
       </div>
 
-      <!-- Lado direito: app -->
-      <div class="app-container">
+           <div class="app-container">
         <div class="container">
           <h1>Avaliação por RM</h1>
           <input type="text" id="rmInput" placeholder="Digite seu RM" />
@@ -211,17 +235,63 @@ DELETE /api/{SEU_TEMA}/{rm}
           const data = await response.json();
           resultado.innerHTML = ""; // limpa antes
 
+          const titulo = document.createElement("h3");
+          titulo.innerText = "📌 SEU TEMA";
+          resultado.appendChild(titulo);
+
           const rmLinha = document.createElement("p");
           rmLinha.innerHTML = `<strong>RM:</strong> ${data.rm}`;
           resultado.appendChild(rmLinha);
 
           const temaLinha = document.createElement("p");
-          temaLinha.innerHTML = `<strong>Tema:</strong> ${data.tema.description}`;
+          temaLinha.innerHTML = `<strong>Tema:</strong> ${data.tema}`;
           resultado.appendChild(temaLinha);
+
+          const apiLinha = document.createElement("p");
+          apiLinha.innerHTML = `<strong>Base URL:</strong>`;
+          resultado.appendChild(apiLinha);
+
+          const apiLinha1 = document.createElement("div");
+          apiLinha1.classList.add("api-url");
+          apiLinha1.innerText = `https://generic-items-api-a785ff596d21.herokuapp.com`;
+          resultado.appendChild(apiLinha1);
+
+          const getAPI = document.createElement("p");
+          getAPI.innerHTML = "<br/><strong>GET</strong>";
+          resultado.appendChild(getAPI);
+
+          const lista = document.createElement("ul");
+          const li = document.createElement("li");
+          li.textContent = `/api/${data.tema.toLowerCase()}/{rm}`;
+          lista.appendChild(li);
+          resultado.appendChild(lista);
+
+
+          const postAPI = document.createElement("p");
+          postAPI.innerHTML = "<br/><strong>POST</strong>";
+          resultado.appendChild(postAPI);
+
+          const listaPost = document.createElement("ul");
+          const liPost = document.createElement("li");
+          liPost.textContent = `/api/${data.tema.toLowerCase()}`;
+          listaPost.appendChild(liPost);
+          resultado.appendChild(listaPost);
+
+
+          const deleteAPI = document.createElement("p");
+          deleteAPI.innerHTML = "<br/><strong>DELETE</strong>";
+          resultado.appendChild(deleteAPI);
+
+          const listaDelete = document.createElement("ul");
+          const liDelete = document.createElement("li");
+          liDelete.textContent = `/api/${data.tema.toLowerCase()}/{rm}/{id}`;
+          listaDelete.appendChild(liDelete);
+          resultado.appendChild(listaDelete);
+          
 
           if (Array.isArray(data.tema.fields)) {
             const listaTitulo = document.createElement("p");
-            listaTitulo.innerHTML = "<strong>Campos:</strong>";
+            listaTitulo.innerHTML = "<br/><strong>Campos obrigatórios:</strong>";
             resultado.appendChild(listaTitulo);
 
             const lista = document.createElement("ul");
@@ -233,9 +303,8 @@ DELETE /api/{SEU_TEMA}/{rm}
             resultado.appendChild(lista);
           }
         } catch (error) {
-          resultado.innerHTML =
-            "<p style='color:red;'>❌ Erro ao buscar tema!</p>";
-          console.error(error);
+          //resultado.innerHTML = `<p style='color:red;'> ❌ Erro ao buscar tema! ${error}/{rm}/{id}</p>`;
+          resultado.innerHTML = `<p style='color:red;'> RM não registrado!</p>`;
         }
       }
     </script>

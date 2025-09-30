@@ -4,6 +4,8 @@ const swaggerUi = require("swagger-ui-express");
 const swaggerSpec = require("./swagger");
 const path = require("path");
 
+const temas = require("./temas.json"); // importa o JSON
+
 //const itemsRoutes = require("./routes/items");
 const genericRoutes = require("./routes/generic");
 
@@ -16,30 +18,6 @@ app.use(express.static(path.join(__dirname, "public")));
 app.use(cors());
 app.use(express.json());
 
-// Lista de temas
-const temas = [
-  {
-    description: "Livros",
-    fields: ["imagem", "título", "descrição do livro", "ano de publicação"],
-  },
-  {
-    description: "Carros",
-    fields: ["imagem", "título", "descrição do livro", "ano de publicação"],
-  },
-  {
-    description: "Escolas",
-    fields: ["imagem", "título", "descrição do livro", "ano de publicação"],
-  },
-  {
-    description: "Comidas",
-    fields: ["imagem", "título", "descrição do livro", "ano de publicação"],
-  },
-  {
-    description: "Futebol",
-    fields: ["imagem", "título", "descrição do livro", "ano de publicação"],
-  },
-];
-
 // Endpoint que retorna o tema por RM
 app.get("/api/tema/:rm", (req, res) => {
   const rm = parseInt(req.params.rm);
@@ -48,10 +26,18 @@ app.get("/api/tema/:rm", (req, res) => {
     return res.status(400).json({ error: "RM inválido" });
   }
 
-  const indice = rm % temas.length;
+  // Procura o tema que contém o RM
+  const temaEncontrado = temas.find((t) => t.rmList.includes(rm));
+
+  if (!temaEncontrado) {
+    return res.status(404).json({ error: "RM não encontrado" });
+  }
+
   res.json({
     rm: rm,
-    tema: temas[indice],
+    tema: temaEncontrado.tema,
+    description: temaEncontrado.description,
+    fields: temaEncontrado.fields,
   });
 });
 

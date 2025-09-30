@@ -1,0 +1,367 @@
+[
+  {
+    "tema": "livros",
+    "rmList": [552261],
+    "fields": ["imagem", "título", "descrição do livro", "ano de publicação"],
+    "description": "Coleção de livros"
+  },
+  {
+    "tema": "filmes",
+    "rmList": [97760],
+    "fields": ["imagem", "título", "descrição", "ano de lançamento"],
+    "description": "Coleção de filmes"
+  },
+  {
+    "tema": "series",
+    "rmList": [552352],
+    "fields": ["imagem", "título", "descrição", "número de temporadas"],
+    "description": "Coleção de séries"
+  },
+  {
+    "tema": "jogos-digitais",
+    "rmList": [98263],
+    "fields": ["imagem", "título", "descrição", "ano de lançamento"],
+    "description": "Jogos digitais"
+  },
+  {
+    "tema": "jogos-de-tabuleiro",
+    "rmList": [99348],
+    "fields": ["imagem", "título", "descrição", "número de jogadores"],
+    "description": "Jogos de tabuleiro"
+  },
+  {
+    "tema": "animes",
+    "rmList": [98041],
+    "fields": ["imagem", "título", "descrição", "número de episódios"],
+    "description": "Animes"
+  },
+  {
+    "tema": "mangas",
+    "rmList": [552233],
+    "fields": ["imagem", "título", "descrição", "número de volumes"],
+    "description": "Mangás"
+  },
+  {
+    "tema": "quadrinhos",
+    "rmList": [552250],
+    "fields": ["imagem", "título", "descrição", "edição/número"],
+    "description": "Quadrinhos"
+  },
+  {
+    "tema": "personagens-de-filmes",
+    "rmList": [552286],
+    "fields": ["imagem", "título", "descrição", "ano de criação"],
+    "description": "Personagens de filmes"
+  },
+  {
+    "tema": "personagens-de-jogos",
+    "rmList": [552253],
+    "fields": ["imagem", "título", "descrição", "poder/nível"],
+    "description": "Personagens de jogos"
+  },
+  {
+    "tema": "musicas",
+    "rmList": [552311],
+    "fields": ["imagem", "título", "descrição", "duração em segundos"],
+    "description": "Músicas"
+  },
+  {
+    "tema": "albuns",
+    "rmList": [550120],
+    "fields": ["imagem", "título", "descrição", "ano de lançamento"],
+    "description": "Álbuns"
+  },
+  {
+    "tema": "esportes",
+    "rmList": [97811],
+    "fields": ["imagem", "título", "descrição", "número de jogadores"],
+    "description": "Esportes"
+  },
+  {
+    "tema": "times-de-futebol",
+    "rmList": [552486],
+    "fields": ["imagem", "título", "descrição", "ano de fundação"],
+    "description": "Times de futebol"
+  },
+  {
+    "tema": "jogadores-de-futebol",
+    "rmList": [98805],
+    "fields": ["imagem", "título", "descrição", "número de gols"],
+    "description": "Jogadores de futebol"
+  },
+  {
+    "tema": "selecoes-nacionais",
+    "rmList": [550965],
+    "fields": ["imagem", "título", "descrição", "número de títulos"],
+    "description": "Seleções nacionais"
+  },
+  {
+    "tema": "basquete",
+    "rmList": [98157],
+    "fields": ["imagem", "título", "descrição", "ano de fundação/time"],
+    "description": "Basquete"
+  },
+  {
+    "tema": "jogadores-de-basquete",
+    "rmList": [98775],
+    "fields": ["imagem", "título", "descrição", "número de pontos"],
+    "description": "Jogadores de basquete"
+  },
+  {
+    "tema": "olimpiadas",
+    "rmList": [551425],
+    "fields": ["imagem", "título", "descrição", "ano de realização"],
+    "description": "Olimpíadas"
+  },
+  {
+    "tema": "estadios",
+    "rmList": [552455],
+    "fields": ["imagem", "título", "descrição", "capacidade"],
+    "description": "Estádios"
+  },
+  {
+    "tema": "artes-marciais",
+    "rmList": [98076],
+    "fields": ["imagem", "título", "descrição", "nível de graduação"],
+    "description": "Artes marciais"
+  },
+  {
+    "tema": "esportes-radicais",
+    "rmList": [98306],
+    "fields": ["imagem", "título", "descrição", "nível de risco 1–10"],
+    "description": "Esportes radicais"
+  },
+  {
+    "tema": "artistas",
+    "rmList": [98780],
+    "fields": ["imagem", "título", "descrição", "número de álbuns"],
+    "description": "Artistas"
+  },
+  {
+    "tema": "bandas",
+    "rmList": [551775],
+    "fields": ["imagem", "título", "descrição", "número de integrantes"],
+    "description": "Bandas"
+  },
+  {
+    "tema": "instrumentos-musicais",
+    "rmList": [552323],
+    "fields": ["imagem", "título", "descrição", "ano de criação"],
+    "description": "Instrumentos musicais"
+  },
+  {
+    "tema": "generos-musicais",
+    "rmList": [552240],
+    "fields": ["imagem", "título", "descrição", "popularidade em %/nota"],
+    "description": "Gêneros musicais"
+  },
+  {
+    "tema": "pinturas-famosas",
+    "rmList": [93658],
+    "fields": ["imagem", "título", "descrição", "ano de criação"],
+    "description": "Pinturas famosas"
+  },
+  {
+    "tema": "esculturas",
+    "rmList": [558777],
+    "fields": ["imagem", "título", "descrição", "ano de criação"],
+    "description": "Esculturas"
+  },
+  {
+    "tema": "dancas",
+    "rmList": [99695],
+    "fields": ["imagem", "título", "descrição", "nível de dificuldade 1–10"],
+    "description": "Danças"
+  },
+  {
+    "tema": "teatros",
+    "rmList": [99428],
+    "fields": ["imagem", "título", "descrição", "capacidade de público"],
+    "description": "Teatros"
+  },
+  {
+    "tema": "carros",
+    "rmList": [552414],
+    "fields": ["imagem", "título", "descrição", "ano do modelo"],
+    "description": "Carros"
+  },
+  {
+    "tema": "motos",
+    "rmList": [98623],
+    "fields": ["imagem", "título", "descrição", "cilindradas"],
+    "description": "Motos"
+  },
+  {
+    "tema": "caminhoes",
+    "rmList": [98601],
+    "fields": ["imagem", "título", "descrição", "capacidade em toneladas"],
+    "description": "Caminhões"
+  },
+  {
+    "tema": "bicicletas",
+    "rmList": [98627],
+    "fields": ["imagem", "título", "descrição", "número de marchas"],
+    "description": "Bicicletas"
+  },
+  {
+    "tema": "trens",
+    "rmList": [99995],
+    "fields": ["imagem", "título", "descrição", "capacidade de passageiros"],
+    "description": "Trens"
+  },
+  {
+    "tema": "avioes",
+    "rmList": [551192],
+    "fields": ["imagem", "título", "descrição", "alcance em km"],
+    "description": "Aviões"
+  },
+  {
+    "tema": "navios",
+    "rmList": [99430],
+    "fields": ["imagem", "título", "descrição", "tonelagem"],
+    "description": "Navios"
+  },
+  {
+    "tema": "robos",
+    "rmList": [99508],
+    "fields": ["imagem", "título", "descrição", "ano de criação"],
+    "description": "Robôs"
+  },
+  {
+    "tema": "celulares",
+    "rmList": [551234],
+    "fields": ["imagem", "título", "descrição", "ano de lançamento"],
+    "description": "Celulares"
+  },
+  {
+    "tema": "computadores",
+    "rmList": [552372],
+    "fields": ["imagem", "título", "descrição", "memória em GB"],
+    "description": "Computadores"
+  },
+  {
+    "tema": "animais",
+    "rmList": [98821],
+    "fields": ["imagem", "título", "descrição", "expectativa de vida em anos"],
+    "description": "Animais"
+  },
+  {
+    "tema": "aves",
+    "rmList": [98656],
+    "fields": ["imagem", "título", "descrição", "envergadura em cm"],
+    "description": "Aves"
+  },
+  {
+    "tema": "repteis",
+    "rmList": [97906],
+    "fields": ["imagem", "título", "descrição", "comprimento em cm"],
+    "description": "Répteis"
+  },
+  {
+    "tema": "insetos",
+    "rmList": [98914],
+    "fields": ["imagem", "título", "descrição", "número de patas"],
+    "description": "Insetos"
+  },
+  {
+    "tema": "plantas",
+    "rmList": [98300],
+    "fields": ["imagem", "título", "descrição", "altura em cm"],
+    "description": "Plantas"
+  },
+  {
+    "tema": "arvores",
+    "rmList": [94420],
+    "fields": ["imagem", "título", "descrição", "idade em anos"],
+    "description": "Árvores"
+  },
+  {
+    "tema": "flores",
+    "rmList": [88755],
+    "fields": ["imagem", "título", "descrição", "altura em cm"],
+    "description": "Flores"
+  },
+  {
+    "tema": "planetas",
+    "rmList": [98865],
+    "fields": [
+      "imagem",
+      "título",
+      "descrição",
+      "distância do sol em milhões km"
+    ],
+    "description": "Planetas"
+  },
+  {
+    "tema": "estrelas",
+    "rmList": [551442],
+    "fields": ["imagem", "título", "descrição", "tamanho em vezes o Sol"],
+    "description": "Estrelas"
+  },
+  {
+    "tema": "minerais",
+    "rmList": [550186],
+    "fields": ["imagem", "título", "descrição", "dureza Mohs"],
+    "description": "Minerais"
+  },
+  {
+    "tema": "receitas",
+    "rmList": [550347],
+    "fields": ["imagem", "título", "descrição", "tempo de preparo em minutos"],
+    "description": "Receitas"
+  },
+  {
+    "tema": "ingredientes",
+    "rmList": [98160],
+    "fields": ["imagem", "título", "descrição", "quantidade em gramas"],
+    "description": "Ingredientes"
+  },
+  {
+    "tema": "frutas",
+    "rmList": [551170],
+    "fields": ["imagem", "título", "descrição", "calorias por 100g"],
+    "description": "Frutas"
+  },
+  {
+    "tema": "legumes",
+    "rmList": [98703],
+    "fields": ["imagem", "título", "descrição", "calorias por 100g"],
+    "description": "Legumes"
+  },
+  {
+    "tema": "sobremesas",
+    "rmList": [98231],
+    "fields": ["imagem", "título", "descrição", "calorias por porção"],
+    "description": "Sobremesas"
+  },
+  {
+    "tema": "bebidas",
+    "rmList": [552263],
+    "fields": ["imagem", "título", "descrição", "volume em ml"],
+    "description": "Bebidas"
+  },
+  {
+    "tema": "restaurantes",
+    "rmList": [98730],
+    "fields": ["imagem", "título", "descrição", "avaliação em estrelas"],
+    "description": "Restaurantes"
+  },
+  {
+    "tema": "pratos-tipicos",
+    "rmList": [88170],
+    "fields": ["imagem", "título", "descrição", "calorias por porção"],
+    "description": "Pratos típicos"
+  },
+  {
+    "tema": "lanches",
+    "rmList": [1234],
+    "fields": ["imagem", "título", "descrição", "calorias por unidade"],
+    "description": "Lanches"
+  },
+  {
+    "tema": "temperos",
+    "rmList": [],
+    "fields": ["imagem", "título", "descrição", "nível de picância 1–10"],
+    "description": "Temperos"
+  }
+]
