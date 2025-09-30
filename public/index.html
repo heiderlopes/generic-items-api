@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Avaliação por RM</title>
+    <style>
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        background: linear-gradient(135deg, #74ebd5 0%, #9face6 100%);
+        margin: 0;
+        padding: 0;
+        height: 100vh;
+        display: flex;
+      }
+
+      /* Layout principal: 2 colunas */
+      .layout {
+        display: flex;
+        width: 100%;
+        height: 100%;
+      }
+
+      /* Coluna esquerda (Instruções) */
+      .instrucoes {
+        flex: 1;
+        background: #fff;
+        border-right: 3px solid #6a5acd;
+        padding: 20px;
+        overflow-y: auto;
+      }
+
+      .instrucoes h2 {
+        margin-top: 0;
+        color: #6a5acd;
+      }
+
+      .instrucoes pre {
+        white-space: pre-wrap;
+        font-family: inherit;
+        background: #f8f9ff;
+        padding: 15px;
+        border-radius: 8px;
+        border-left: 5px solid #6a5acd;
+      }
+
+      /* Coluna direita (Aplicação) */
+      .app-container {
+        flex: 1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 20px;
+      }
+
+      .container {
+        background: #fff;
+        border-radius: 12px;
+        box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2);
+        padding: 30px;
+        width: 400px;
+        text-align: center;
+        animation: fadeIn 0.8s ease;
+      }
+
+      h1 {
+        color: #333;
+        margin-bottom: 20px;
+      }
+
+      input {
+        padding: 10px;
+        font-size: 16px;
+        border: 2px solid #ddd;
+        border-radius: 8px;
+        outline: none;
+        transition: border 0.3s;
+        width: calc(100% - 24px);
+        margin-bottom: 10px;
+      }
+
+      input:focus {
+        border: 2px solid #6a5acd;
+      }
+
+      button {
+        padding: 10px 20px;
+        font-size: 16px;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        background: #6a5acd;
+        color: #fff;
+        transition: background 0.3s;
+      }
+
+      button:hover {
+        background: #4b3ca8;
+      }
+
+      .resultado {
+        margin-top: 25px;
+        text-align: left;
+        background: #f8f9ff;
+        padding: 15px;
+        border-radius: 10px;
+        border-left: 5px solid #6a5acd;
+      }
+
+      .resultado p {
+        margin: 8px 0;
+        color: #333;
+      }
+
+      .resultado ul {
+        list-style: none;
+        padding: 0;
+        margin: 10px 0 0 0;
+      }
+
+      .resultado ul li {
+        background: #e6e6fa;
+        padding: 8px;
+        margin-bottom: 6px;
+        border-radius: 6px;
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(-10px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="layout">
+      <!-- Lado esquerdo: instruções -->
+      <div class="instrucoes">
+        <h2>CHECKPOINT FLUTTER</h2>
+        <pre>
+Instruções Gerais
+O projeto deve estar funcionando na hora da correção.
+Os métodos e widgets solicitados serão avaliados como certo ou errado (não haverá pontuação parcial dentro de cada item).
+Não será permitida a consulta a ferramentas de Inteligência Artificial (IA) durante a prova. Caso haja algum indício do uso a nota será ZERO.
+Caso o projeto não compile ou apresente erros que impeçam a execução, a avaliação será considerada ZERO.
+
+Crie o projeto rodando o seguinte comando (substituindo XXXX pelo seu RM). Caso não seja gerado o package corretamente, a nota da avaliação será ZERO:
+flutter create --org br.com.seurm checkpoint05_webservices_rmXXXX
+
+Obrigatório o envio do arquivo zipado contendo:
+- main.dart
+- pubspec.yaml
+
+Requisitos:
+(3,0 pontos) LISTA DE REGISTROS
+- Exibir os registros cadastrados na API pelo RM em uma lista.
+- Cada item da lista deve mostrar os campos obrigatórios cadastrados no formulário.
+
+(1,0 pontos) BOTÃO PARA REGISTRO
+- Adicionar um Button ou FloatActionButton para adicionar um novo livro.
+
+(3,0 pontos) EXCLUSÃO DE REGISTRO
+- Adicione um botão no item da lista para realizar a exclusão do item. Após a exclusão recarregar a lista.
+
+(3,0 pontos) FORMULÁRIO DE REGISTRO
+- Você deve criar um formulário obrigatoriamente com pelo menos 4 campos: Imagem (URL), título, descrição e valor.
+- Exibir preview da imagem abaixo do campo de URL, renderizando a imagem da internet.
+- Botão para Salvar.
+
+API Backend:
+https://generic-items-api-a785ff596d21.herokuapp.com
+
+GET /api/{SEU_TEMA}/{rm}
+POST /api/{SEU_TEMA}
+DELETE /api/{SEU_TEMA}/{rm}
+      </pre
+        >
+      </div>
+
+      <!-- Lado direito: app -->
+      <div class="app-container">
+        <div class="container">
+          <h1>Avaliação por RM</h1>
+          <input type="text" id="rmInput" placeholder="Digite seu RM" />
+          <button onclick="buscarTema()">Ver tema da avaliação</button>
+          <div class="resultado" id="resultado"></div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      async function buscarTema() {
+        const rm = document.getElementById("rmInput").value.trim();
+        const resultado = document.getElementById("resultado");
+
+        if (rm === "") {
+          resultado.innerHTML = "<p>⚠️ Por favor, informe seu RM!</p>";
+          return;
+        }
+
+        try {
+          const response = await fetch(`/api/tema/${rm}`);
+          if (!response.ok) {
+            throw new Error("Erro na resposta do servidor");
+          }
+
+          const data = await response.json();
+          resultado.innerHTML = ""; // limpa antes
+
+          const rmLinha = document.createElement("p");
+          rmLinha.innerHTML = `<strong>RM:</strong> ${data.rm}`;
+          resultado.appendChild(rmLinha);
+
+          const temaLinha = document.createElement("p");
+          temaLinha.innerHTML = `<strong>Tema:</strong> ${data.tema.description}`;
+          resultado.appendChild(temaLinha);
+
+          if (Array.isArray(data.tema.fields)) {
+            const listaTitulo = document.createElement("p");
+            listaTitulo.innerHTML = "<strong>Campos:</strong>";
+            resultado.appendChild(listaTitulo);
+
+            const lista = document.createElement("ul");
+            data.tema.fields.forEach((field) => {
+              const li = document.createElement("li");
+              li.textContent = field;
+              lista.appendChild(li);
+            });
+            resultado.appendChild(lista);
+          }
+        } catch (error) {
+          resultado.innerHTML =
+            "<p style='color:red;'>❌ Erro ao buscar tema!</p>";
+          console.error(error);
+        }
+      }
+    </script>
+  </body>
+</html>
