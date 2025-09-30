@@ -289,13 +289,13 @@
           resultado.appendChild(listaDelete);
           
 
-          if (Array.isArray(data.tema.fields)) {
+          if (Array.isArray(data.fields)) {
             const listaTitulo = document.createElement("p");
             listaTitulo.innerHTML = "<br/><strong>Campos obrigatórios:</strong>";
             resultado.appendChild(listaTitulo);
 
             const lista = document.createElement("ul");
-            data.tema.fields.forEach((field) => {
+            data.fields.forEach((field) => {
               const li = document.createElement("li");
               li.textContent = field;
               lista.appendChild(li);
