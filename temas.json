@@ -1,7 +1,7 @@
 [
   {
     "tema": "livros",
-    "rmList": [552261, 552353],
+    "rmList": [552261, 552353, 552575],
     "fields": [
       "rm",
       "imagem",
@@ -13,61 +13,61 @@
   },
   {
     "tema": "filmes",
-    "rmList": [97760, 551411],
+    "rmList": [97760, 551411, 95415],
     "fields": ["rm", "imagem", "título", "descrição", "ano de lançamento"],
     "description": "Coleção de filmes"
   },
   {
     "tema": "series",
-    "rmList": [552352, 98456],
+    "rmList": [552352, 98456, 551015],
     "fields": ["rm", "imagem", "título", "descrição", "número de temporadas"],
     "description": "Coleção de séries"
   },
   {
     "tema": "jogos-digitais",
-    "rmList": [98263, 97643],
+    "rmList": [98263, 97643, 550984],
     "fields": ["rm", "imagem", "título", "descrição", "ano de lançamento"],
     "description": "Jogos digitais"
   },
   {
     "tema": "jogos-de-tabuleiro",
-    "rmList": [99348, 551765],
+    "rmList": [99348, 551765, 551650],
     "fields": ["rm", "imagem", "título", "descrição", "número de jogadores"],
     "description": "Jogos de tabuleiro"
   },
   {
     "tema": "animes",
-    "rmList": [98041, 98007],
+    "rmList": [98041, 98007, 550616],
     "fields": ["rm", "imagem", "título", "descrição", "número de episódios"],
     "description": "Animes"
   },
   {
     "tema": "mangas",
-    "rmList": [552233, 551738],
+    "rmList": [552233, 551738, 95664],
     "fields": ["rm", "imagem", "título", "descrição", "número de volumes"],
     "description": "Mangás"
   },
   {
     "tema": "quadrinhos",
-    "rmList": [552250, 98446],
+    "rmList": [552250, 98446, 550778],
     "fields": ["rm", "imagem", "título", "descrição", "edição/número"],
     "description": "Quadrinhos"
   },
   {
     "tema": "personagens-de-filmes",
-    "rmList": [552286, 551188],
+    "rmList": [552286, 551188, 99947],
     "fields": ["rm", "imagem", "título", "descrição", "ano de criação"],
     "description": "Personagens de filmes"
   },
   {
     "tema": "personagens-de-jogos",
-    "rmList": [552253, 552006],
+    "rmList": [552253, 552006, 97803],
     "fields": ["rm", "imagem", "título", "descrição", "poder/nível"],
     "description": "Personagens de jogos"
   },
   {
     "tema": "musicas",
-    "rmList": [552311, 99062],
+    "rmList": [552311, 99062, 552273],
     "fields": ["rm", "imagem", "título", "descrição", "duração em segundos"],
     "description": "Músicas"
   },
